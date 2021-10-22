@@ -270,20 +270,33 @@ console.log[wizard1]
 
 //Code Here
 class Phone {
-  constructor(brand, model, storage, color, price, sold) {
+  constructor(brand, model, storage, color, price,) {
     this.brand = brand;
     this.model = model;
     this.storage = storage;
     this.color = color;
     this.price = price;
     this.sold = false;
-    function sell(){
+  }  
 
-    }
 
-  }
+  sell() {
+  this.sold = true 
+  console.log(`${this.brand} ${this.model} has been sold`)
+}
+
+
+changePrice(newPrice) {
+  this.price = newPrice
+}
+
 }
   
+
+//  let phone1 = new Phone('apple', 'iphone 13', '125GB', 'black', 9999, true)
+//console.log[phone1]
+// phone1.sell()
+
 /*
     Next make three new phone instances using your class.
     Send in values of your choice. They should match these data types:
@@ -295,7 +308,11 @@ class Phone {
 */
 
 //Code Here
+let phone1 = new Phone('apple', 'iphone 13', 125, 'black', 9999,)
+let phone2 = new Phone('apple', 'iphone 13', 250, 'white', 1250,)
+let phone3 = new Phone('apple', 'iphone 13', 125, 'silver', 999,) 
 
+phone1.sell()
 /* 
   Call the changePrice function on one of your phones, 
   don't forget to pass in a new price 
@@ -304,6 +321,7 @@ class Phone {
 */ 
 
 //Code Here 
+phone1.changePrice(9999)
 
 
 /*
@@ -313,7 +331,8 @@ class Phone {
 */
 
 //Code Here 
-
+phone2.sell()
+console.log(phone2.sold)
 
 //////////////////////////// PROBLEM 15 ////////////////////////////
 
@@ -332,7 +351,7 @@ const colors = {
 //do not edit this object
 
 //Code Here 
-
+const colorsCopy = {...colors}
 
 
 /*
@@ -361,9 +380,10 @@ const shippingInfo = {
 
 //Code Here
 
+const helensInfo = {...contactInfo, ...shippingInfo}
 
 //Print helensInfo to see what it looks like, there should be no repeating properties.
-
+console.log(helensInfo)
 
 //////////////////////////// PROBLEM 16 ////////////////////////////
 
@@ -378,7 +398,19 @@ const shippingInfo = {
 */
 
 //Code Here 
+class Vehicle {
+  constructor(capacity, color, mileage){
+    this.capacity = capacity;
+    this.color = color;
+    this.mileage = mileage;
+  }
 
+
+  move(miles){
+    this.mileage = miles;
+    console.log(this.mileage)
+  }
+}
 
 /*
   Create a vehicle using your new class and save it to a variable called myFirstVehicle
@@ -386,6 +418,7 @@ const shippingInfo = {
 
 //Code Here
 
+let myFirstVehicle = new Vehicle('full', 'tan', 195000)
 
 /* 
   Now we'll create a class that's based off of the vehicle class. 
